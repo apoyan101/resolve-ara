@@ -7,9 +7,7 @@ enum APIError: Error {
     case decodingFailed(Error)
 }
 
-/// Talks to the support ticket REST API. `baseURL` defaults to a placeholder —
-/// point it at a real backend once one is deployed. Until then, screens fall
-/// back to `MockData` so they can be previewed on their own.
+/// Talks to the support ticket REST API.
 final class TicketAPIService {
     static let shared = TicketAPIService()
 
@@ -17,7 +15,7 @@ final class TicketAPIService {
     private let session: URLSession
     private let decoder: JSONDecoder
 
-    init(baseURL: URL = URL(string: "https://api.example.com")!, session: URLSession = .shared) {
+    init(baseURL: URL = URL(string: "http://3.89.116.245:3000")!, session: URLSession = .shared) {
         self.baseURL = baseURL
         self.session = session
 
@@ -26,7 +24,7 @@ final class TicketAPIService {
         self.decoder = decoder
     }
 
-    /// Placeholder: fetch all tickets, optionally filtered by status/priority.
+    /// Fetch all tickets, optionally filtered by status/priority.
     func fetchTickets(status: TicketStatus? = nil, priority: TicketPriority? = nil) async throws -> [Ticket] {
         var components = URLComponents(url: baseURL.appendingPathComponent("tickets"), resolvingAgainstBaseURL: false)
         var queryItems: [URLQueryItem] = []
@@ -42,7 +40,7 @@ final class TicketAPIService {
         return try await get([Ticket].self, url: url)
     }
 
-    /// Placeholder: fetch a single ticket, including its comments.
+    /// Fetch a single ticket, including its comments.
     func fetchTicket(id: String) async throws -> Ticket {
         let url = baseURL.appendingPathComponent("tickets/\(id)")
         return try await get(Ticket.self, url: url)

@@ -4,7 +4,7 @@ final class TicketListViewController: UITableViewController {
 
     private let cellReuseIdentifier = "TicketCell"
     private let apiService = TicketAPIService.shared
-    private var tickets: [Ticket] = MockData.tickets
+    private var tickets: [Ticket] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,6 +13,10 @@ final class TicketListViewController: UITableViewController {
 
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+
+        Task {
+            await loadTickets()
+        }
     }
 
     @objc private func handleRefresh() {
@@ -22,14 +26,13 @@ final class TicketListViewController: UITableViewController {
         }
     }
 
-    /// Tries to load tickets from the live API; keeps whatever's already on
-    /// screen (starting with `MockData.tickets`) if no backend is reachable.
+    /// Loads tickets from the live API.
     private func loadTickets() async {
         do {
             tickets = try await apiService.fetchTickets()
             tableView.reloadData()
         } catch {
-            print("Failed to fetch tickets from API, keeping current data: \(error)")
+            print("Failed to fetch tickets from API: \(error)")
         }
     }
 
