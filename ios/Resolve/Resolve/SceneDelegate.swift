@@ -5,9 +5,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // The initial view controller is loaded from Main.storyboard via the
-        // UISceneStoryboardFile key in Info.plist, so there's nothing to do here.
-        guard scene is UIWindowScene else { return }
+        guard let windowScene = scene as? UIWindowScene else { return }
+
+        let window = UIWindow(windowScene: windowScene)
+        let ticketListViewController = TicketListViewController(nibName: "TicketListViewController", bundle: nil)
+        window.rootViewController = UINavigationController(rootViewController: ticketListViewController)
+        window.makeKeyAndVisible()
+        self.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

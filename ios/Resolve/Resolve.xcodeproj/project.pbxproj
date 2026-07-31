@@ -15,9 +15,10 @@
 		000000000000000000000021 /* TicketAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000015 /* TicketAPIService.swift */; };
 		000000000000000000000022 /* TicketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000016 /* TicketListViewController.swift */; };
 		000000000000000000000023 /* TicketDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000017 /* TicketDetailViewController.swift */; };
-		000000000000000000000024 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000018 /* Main.storyboard */; };
 		000000000000000000000025 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000019 /* LaunchScreen.storyboard */; };
 		000000000000000000000026 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000001A /* Assets.xcassets */; };
+		000000000000000000000029 /* TicketListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000027 /* TicketListViewController.xib */; };
+		00000000000000000000002A /* TicketDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000028 /* TicketDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +31,11 @@
 		000000000000000000000015 /* TicketAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketAPIService.swift; sourceTree = "<group>"; };
 		000000000000000000000016 /* TicketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListViewController.swift; sourceTree = "<group>"; };
 		000000000000000000000017 /* TicketDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailViewController.swift; sourceTree = "<group>"; };
-		000000000000000000000018 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		000000000000000000000019 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00000000000000000000001A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00000000000000000000001B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		000000000000000000000027 /* TicketListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketListViewController.xib; sourceTree = "<group>"; };
+		000000000000000000000028 /* TicketDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +63,6 @@
 				000000000000000000000010 /* AppDelegate.swift */,
 				000000000000000000000011 /* SceneDelegate.swift */,
 				00000000000000000000001B /* Info.plist */,
-				000000000000000000000018 /* Main.storyboard */,
 				000000000000000000000019 /* LaunchScreen.storyboard */,
 				00000000000000000000001A /* Assets.xcassets */,
 				000000000000000000000012 /* Ticket.swift */,
@@ -69,7 +70,9 @@
 				000000000000000000000014 /* MockData.swift */,
 				000000000000000000000015 /* TicketAPIService.swift */,
 				000000000000000000000016 /* TicketListViewController.swift */,
+				000000000000000000000027 /* TicketListViewController.xib */,
 				000000000000000000000017 /* TicketDetailViewController.swift */,
+				000000000000000000000028 /* TicketDetailViewController.xib */,
 			);
 			path = Resolve;
 			sourceTree = "<group>";
@@ -138,9 +141,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				000000000000000000000024 /* Main.storyboard in Resources */,
 				000000000000000000000025 /* LaunchScreen.storyboard in Resources */,
 				000000000000000000000026 /* Assets.xcassets in Resources */,
+				000000000000000000000029 /* TicketListViewController.xib in Resources */,
+				00000000000000000000002A /* TicketDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

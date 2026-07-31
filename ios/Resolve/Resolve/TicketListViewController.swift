@@ -60,7 +60,7 @@ final class TicketListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        let detailViewController = TicketDetailViewController()
+        let detailViewController = TicketDetailViewController(nibName: "TicketDetailViewController", bundle: nil)
         detailViewController.ticket = tickets[indexPath.row]
         navigationController?.pushViewController(detailViewController, animated: true)
     }
