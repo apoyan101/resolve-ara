@@ -59,13 +59,9 @@ final class TicketListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "showTicketDetail", sender: tickets[indexPath.row])
-    }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "showTicketDetail",
-              let detailViewController = segue.destination as? TicketDetailViewController,
-              let ticket = sender as? Ticket else { return }
-        detailViewController.ticket = ticket
+        let detailViewController = TicketDetailViewController()
+        detailViewController.ticket = tickets[indexPath.row]
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
